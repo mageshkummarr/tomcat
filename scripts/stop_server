@@ -10,7 +10,7 @@ fi
 # Check if there are running containers
 if [ "$(sudo docker ps -q)" ]; then
     # Kill all running containers
-    sudo docker kill $(docker ps -q)
+    sudo docker kill $(sudo docker ps -q)
     echo "All running containers have been killed"
 else
     echo "There are no running containers"
