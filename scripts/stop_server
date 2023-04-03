@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Check if Docker is running
+if ! command -v docker &> /dev/null
+then
+    echo "Docker is not installed or not running"
+    exit 1
+fi
+
+# Check if there are running containers
+if [ "$(sudo docker ps -q)" ]; then
+    # Kill all running containers
+    sudo docker kill $(docker ps -q)
+    echo "All running containers have been killed"
+else
+    echo "There are no running containers"
+fi

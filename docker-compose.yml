@@ -1,0 +1,21 @@
+# docker-compose.yml
+version: '3.7'
+services:
+  one:
+    image: sampleapp
+    user: root
+    ports:
+      - 8081:8080
+    container_name: one
+  two:
+    image: sampleapp
+    user: root
+    ports:
+      - 8082:8080
+    container_name: two
+  three:
+    image: sampleapp
+    user: root
+    ports:
+      - 8083:8080
+    container_name: three

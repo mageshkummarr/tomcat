@@ -1,0 +1,16 @@
+#!/bin/bash
+
+PACKAGE_NAME="docker"
+
+if sudo yum list installed "$PACKAGE_NAME" >/dev/null 2>&1; then
+    echo "$PACKAGE_NAME is already installed."
+	sudo systemctl restart docker
+else
+    echo "$PACKAGE_NAME is not installed. Installing..."
+    sudo yum install -y "$PACKAGE_NAME"
+	sudo systemctl start docker
+fi
+ 
+
+
+
